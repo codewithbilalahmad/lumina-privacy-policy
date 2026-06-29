@@ -16,14 +16,16 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #f2f6fe;
-      color: #1b1e2b;
+      background: #f0f5fe;
+      color: #0b1a1e;
       line-height: 1.7;
       padding: 2rem 1rem;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      background-image: radial-gradient(circle at 10% 20%, rgba(43, 155, 74, 0.03) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(27, 122, 55, 0.03) 0%, transparent 40%);
     }
 
     .container {
@@ -32,29 +34,30 @@
       margin: 0 auto;
     }
 
-    /* ----- header (glass / gradient) ----- */
+    /* ----- header (refined glass + gradient) ----- */
     .header {
-      background: linear-gradient(145deg, #2b7a2b, #1f8b3a);
-      background: linear-gradient(145deg, #1e7a3a, #2b9b4a);
+      background: linear-gradient(145deg, #1a6e34, #1f8a40);
+      background: linear-gradient(135deg, #167a36, #1f9646);
       color: white;
       text-align: center;
-      padding: 3rem 2rem 2.8rem;
-      border-radius: 40px 40px 28px 28px;
+      padding: 3rem 2rem 2.6rem;
+      border-radius: 48px 48px 32px 32px;
       margin-bottom: 2.8rem;
-      box-shadow: 0 18px 40px -10px rgba(30, 120, 50, 0.35);
+      box-shadow: 0 24px 48px -12px rgba(18, 80, 30, 0.35);
       position: relative;
       overflow: hidden;
       backdrop-filter: blur(2px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .header::after {
       content: '';
       position: absolute;
-      top: -40%;
-      right: -20%;
-      width: 300px;
-      height: 300px;
-      background: rgba(255, 255, 255, 0.08);
+      top: -50%;
+      right: -15%;
+      width: 320px;
+      height: 320px;
+      background: rgba(255, 255, 255, 0.07);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -62,68 +65,86 @@
     .header::before {
       content: '';
       position: absolute;
-      bottom: -30%;
-      left: -15%;
-      width: 250px;
-      height: 250px;
+      bottom: -40%;
+      left: -10%;
+      width: 280px;
+      height: 280px;
       background: rgba(255, 255, 255, 0.05);
       border-radius: 50%;
       pointer-events: none;
     }
 
-    .header img {
+    .header-icon {
       width: 110px;
       height: 110px;
-      border-radius: 30px;
-      background: white;
+      border-radius: 32px;
+      background: rgba(255, 255, 255, 0.95);
       padding: 18px;
-      box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.2);
       margin-bottom: 1.2rem;
-      transition: transform 0.25s ease;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
       display: inline-block;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
-    .header img:hover {
-      transform: scale(1.03) rotate(-2deg);
+    .header-icon:hover {
+      transform: scale(1.05) rotate(-3deg);
+      box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.25);
     }
 
     .header h1 {
-      font-size: 3.2rem;
+      font-size: 3.4rem;
       font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.25rem;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.2rem;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      background: linear-gradient(to right, #ffffff, #e0f0e0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .header p {
-      font-size: 1.25rem;
+    .header .subhead {
+      font-size: 1.2rem;
       font-weight: 400;
-      opacity: 0.92;
-      letter-spacing: 0.3px;
-      background: rgba(255, 255, 255, 0.15);
+      opacity: 0.95;
+      letter-spacing: 0.5px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       display: inline-block;
-      padding: 0.3rem 2rem;
+      padding: 0.4rem 2.2rem;
       border-radius: 60px;
-      backdrop-filter: blur(4px);
-      margin-top: 0.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      margin-top: 0.3rem;
+      -webkit-text-fill-color: white;
+      background-clip: unset;
     }
 
-    /* ----- main card (elevated) ----- */
+    /* ----- main card (elevated glassmorphism) ----- */
     .card {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      border-radius: 36px;
-      padding: 2.8rem 3rem;
-      box-shadow: 0 20px 50px -12px rgba(0, 20, 10, 0.15),
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 40px;
+      padding: 3rem 3.2rem;
+      box-shadow: 0 30px 60px -20px rgba(0, 30, 10, 0.2),
                   0 0 0 1px rgba(255, 255, 255, 0.6) inset;
-      transition: box-shadow 0.2s;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.4);
     }
 
-    /* ----- sections ----- */
+    .card:hover {
+      box-shadow: 0 40px 80px -20px rgba(18, 60, 30, 0.25),
+                  0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+      transform: translateY(-2px);
+    }
+
+    /* ----- sections (clean dividers) ----- */
     section {
-      margin-bottom: 2.8rem;
-      padding-bottom: 1.5rem;
+      margin-bottom: 2.6rem;
+      padding-bottom: 1.8rem;
       border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     }
 
@@ -135,152 +156,203 @@
 
     h2 {
       font-size: 1.7rem;
-      font-weight: 600;
-      color: #166b30;
+      font-weight: 650;
+      color: #0f5428;
       letter-spacing: -0.02em;
       margin-bottom: 1rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
 
     h2::before {
-      content: "◆";
+      content: "●";
       font-size: 1.2rem;
-      color: #2b9b4a;
-      opacity: 0.7;
+      color: #1f9646;
+      opacity: 0.8;
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.05));
     }
 
     p {
       margin-bottom: 0.9rem;
-      color: #1f2a3f;
+      color: #1b2a31;
       font-weight: 400;
     }
 
     ul {
-      padding-left: 1.5rem;
+      padding-left: 0.2rem;
       margin: 1rem 0 1.2rem;
       list-style: none;
     }
 
     li {
       margin-bottom: 0.65rem;
-      padding-left: 1.5rem;
+      padding-left: 1.8rem;
       position: relative;
       font-weight: 400;
-      color: #1f2a3f;
+      color: #1b2a31;
     }
 
     li::before {
       content: "▹";
-      color: #2b9b4a;
+      color: #1f9646;
       font-weight: 600;
       position: absolute;
       left: 0;
+      font-size: 1.1rem;
     }
 
-    /* permission cards */
+    /* permission cards (elevated) */
     .permission {
-      background: #edf7ed;
-      border-left: 6px solid #2b9b4a;
-      border-radius: 18px;
-      padding: 1.3rem 1.8rem;
+      background: rgba(235, 248, 235, 0.7);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-left: 6px solid #1f9646;
+      border-radius: 24px;
+      padding: 1.4rem 1.8rem;
       margin: 1.5rem 0 0.5rem;
-      box-shadow: 0 4px 12px rgba(30, 120, 50, 0.06);
-      transition: background 0.2s;
+      box-shadow: 0 8px 20px rgba(30, 120, 50, 0.06);
+      transition: background 0.2s, box-shadow 0.2s;
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     .permission:hover {
-      background: #e6f3e6;
+      background: rgba(230, 245, 230, 0.8);
+      box-shadow: 0 12px 28px rgba(30, 120, 50, 0.08);
     }
 
     .permission strong {
       display: inline-block;
       font-size: 1.05rem;
-      color: #115a26;
+      color: #0d4620;
       margin-bottom: 0.2rem;
+      font-weight: 600;
     }
 
     .permission p {
       margin-bottom: 0;
-      color: #1f2a3f;
+      color: #1b2a31;
     }
 
-    /* inline badge / tag */
+    /* inline badges */
     .badge {
-      background: #2b9b4a10;
-      color: #166b30;
+      background: #1f964610;
+      color: #0f5428;
       font-weight: 500;
-      padding: 0.1rem 0.8rem;
+      padding: 0.1rem 0.9rem;
       border-radius: 40px;
-      font-size: 0.9rem;
-      border: 1px solid #2b9b4a20;
+      font-size: 0.85rem;
+      border: 1px solid #1f964620;
+      display: inline-block;
+    }
+
+    .highlight-box {
+      background: rgba(235, 248, 235, 0.5);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      padding: 0.8rem 1.6rem;
+      border-radius: 60px;
+      display: inline-block;
+      font-size: 0.95rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      margin-top: 0.3rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
 
     /* links */
     a {
-      color: #1b7a37;
+      color: #147a33;
       text-decoration: none;
       font-weight: 500;
-      border-bottom: 1.5px dotted rgba(27, 122, 55, 0.25);
-      transition: border-color 0.2s, color 0.2s;
+      border-bottom: 1.5px dotted rgba(20, 122, 51, 0.2);
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      padding: 0 0.1rem;
     }
 
     a:hover {
-      color: #0b4f22;
-      border-bottom-color: #0b4f22;
+      color: #094d20;
+      border-bottom-color: #094d20;
+      background: rgba(31, 150, 70, 0.05);
+      border-radius: 4px;
+    }
+
+    .contact-block {
+      background: rgba(235, 248, 235, 0.6);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      display: inline-block;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+    }
+
+    .contact-block strong {
+      color: #0d4620;
     }
 
     /* footer */
     .footer {
       text-align: center;
-      margin-top: 2.5rem;
-      color: #4f5b6b;
+      margin-top: 2.8rem;
+      color: #3f5560;
       font-size: 0.9rem;
-      padding-top: 0.5rem;
+      padding-top: 0.8rem;
       border-top: 1px solid rgba(0, 0, 0, 0.04);
       letter-spacing: 0.2px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 60px;
+      padding: 1rem 2rem;
+      display: inline-block;
+      width: auto;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
 
     .footer p {
-      margin-bottom: 0.15rem;
-      color: #4f5b6b;
+      margin-bottom: 0.1rem;
+      color: #3f5560;
+      font-weight: 400;
     }
 
     .footer strong {
-      color: #1b6b33;
+      color: #147a33;
       font-weight: 600;
     }
 
     /* responsive */
     @media (max-width: 700px) {
       body {
-        padding: 1rem 0.8rem;
+        padding: 1rem 0.6rem;
       }
 
       .header {
-        padding: 2rem 1.5rem 2rem;
-        border-radius: 32px 32px 24px 24px;
+        padding: 2rem 1.5rem 1.8rem;
+        border-radius: 36px 36px 28px 28px;
       }
 
       .header h1 {
         font-size: 2.4rem;
       }
 
-      .header p {
+      .header .subhead {
         font-size: 1rem;
-        padding: 0.2rem 1.2rem;
+        padding: 0.2rem 1.4rem;
       }
 
-      .header img {
+      .header-icon {
         width: 85px;
         height: 85px;
         padding: 14px;
       }
 
       .card {
-        padding: 1.8rem 1.4rem;
-        border-radius: 28px;
+        padding: 1.8rem 1.2rem;
+        border-radius: 32px;
       }
 
       h2 {
@@ -296,7 +368,13 @@
       }
 
       li {
-        padding-left: 1.4rem;
+        padding-left: 1.5rem;
+      }
+
+      .footer {
+        padding: 0.8rem 1.2rem;
+        width: 100%;
+        border-radius: 40px;
       }
     }
 
@@ -305,35 +383,20 @@
         font-size: 1.9rem;
       }
       .card {
-        padding: 1.4rem 0.9rem;
+        padding: 1.2rem 0.9rem;
       }
       .permission {
         padding: 0.8rem 1rem;
+      }
+      .contact-block {
+        padding: 0.6rem 1.2rem;
       }
     }
 
     /* smooth scroll & selection */
     ::selection {
-      background: #2b9b4a40;
-      color: #0d3d1c;
-    }
-
-    /* extra glow for the card */
-    .card {
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      box-shadow: 0 28px 60px -16px rgba(20, 80, 30, 0.18),
-                  0 0 0 1px rgba(255, 255, 255, 0.7) inset;
-    }
-
-    /* small "new" style for lists */
-    .list-highlight {
-      background: #f7fbf7;
-      border-radius: 18px;
-      padding: 0.8rem 1.5rem 0.8rem 1.2rem;
-      margin: 0.8rem 0;
+      background: #1f964640;
+      color: #0a2f16;
     }
   </style>
 </head>
@@ -343,9 +406,9 @@
   <!-- header -->
   <div class="header">
     <!-- icon (placeholder) -->
-    <img src="ic_launcher-playstore.png" alt="Lumina icon" />
+    <img class="header-icon" src="ic_launcher-playstore.png" alt="Lumina icon" />
     <h1>Lumina</h1>
-    <p>✨ Privacy Policy</p>
+    <span class="subhead">✨ Privacy Policy</span>
   </div>
 
   <!-- main card -->
@@ -373,18 +436,17 @@
         <li>Save your edited images directly to your device</li>
         <li>Share photos via Android’s native share sheet</li>
       </ul>
-      <p style="margin-top:0.5rem; background: #f2faf2; padding: 0.8rem 1.4rem; border-radius: 40px; display: inline-block; font-size:0.95rem;">
+      <div class="highlight-box">
         ⚡ All processing happens locally — your images never leave your device.
-      </p>
+      </div>
     </section>
 
     <!-- 3. Advertising -->
     <section>
       <h2>Advertising</h2>
       <p>
-        Lumina show ads through <strong>Google AdMob</strong> to keep the app free.
+        Lumina shows ads through <strong>Google AdMob</strong> to keep the app free.
       </p>
-  
     </section>
 
     <!-- 4. Third-party -->
@@ -396,10 +458,7 @@
       </ul>
     </section>
 
-    <!-- 5. Buy me a coffee -->
-
-
-    <!-- 6. Data storage -->
+    <!-- 5. Data storage -->
     <section>
       <h2>Data Storage</h2>
       <p>
@@ -407,7 +466,7 @@
       </p>
     </section>
 
-    <!-- 7. Sharing -->
+    <!-- 6. Sharing -->
     <section>
       <h2>Sharing</h2>
       <p>
@@ -415,7 +474,7 @@
       </p>
     </section>
 
-    <!-- 8. Security -->
+    <!-- 7. Security -->
     <section>
       <h2>Data Security</h2>
       <p>
@@ -423,7 +482,7 @@
       </p>
     </section>
 
-    <!-- 9. Children -->
+    <!-- 8. Children -->
     <section>
       <h2>Children's Privacy</h2>
       <p>
@@ -431,7 +490,7 @@
       </p>
     </section>
 
-    <!-- 10. Changes -->
+    <!-- 9. Changes -->
     <section>
       <h2>Changes to This Policy</h2>
       <p>
@@ -439,24 +498,24 @@
       </p>
     </section>
 
-    <!-- 11. Contact -->
+    <!-- 10. Contact -->
     <section>
       <h2>Contact Us</h2>
       <p>
         If you have questions, concerns, or feedback about this Privacy Policy, reach out to:
       </p>
-      <p style="background:#edf7ed; padding:0.8rem 1.8rem; border-radius:60px; display:inline-block;">
+      <div class="contact-block">
         <strong>Muhammad Bilal</strong><br />
         📧 <a href="mailto:mbilal10388@gmail.com">mbilal10388@gmail.com</a>
-      </p>
+      </div>
     </section>
 
   </div> <!-- /card -->
 
   <!-- footer -->
-  <div class="footer">
+  <div class="footer" style="display: block; text-align: center; width: auto;">
     <p><strong>Lumina</strong> · Photo Editing</p>
-    <p>Last Updated: June 29, 2026</p>
+    <p style="opacity: 0.7; font-size: 0.85rem;">Last Updated: June 29, 2026</p>
   </div>
 
 </div> <!-- /container -->
