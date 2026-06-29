@@ -1,384 +1,493 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumina - Privacy Policy</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumina · Privacy Policy</title>
+  <!-- Inter font & base style -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+  <style>
+    /* ----- reset & base ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f2f6fe;
+      color: #1b1e2b;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
-        body{
-            font-family:'Inter',sans-serif;
-            background:#f5f7fb;
-            color:#222;
-            line-height:1.8;
-        }
+    /* ----- header (glass / gradient) ----- */
+    .header {
+      background: linear-gradient(145deg, #2b7a2b, #1f8b3a);
+      background: linear-gradient(145deg, #1e7a3a, #2b9b4a);
+      color: white;
+      text-align: center;
+      padding: 3rem 2rem 2.8rem;
+      border-radius: 40px 40px 28px 28px;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 18px 40px -10px rgba(30, 120, 50, 0.35);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(2px);
+    }
 
-        .container{
-            width:90%;
-            max-width:1100px;
-            margin:auto;
-            padding:40px 0;
-        }
+    .header::after {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      pointer-events: none;
+    }
 
-        .header{
-            background:linear-gradient(135deg,#67CC4C,#3AAE2A);
-            color:white;
-            text-align:center;
-            padding:60px 30px;
-            border-radius:20px;
-            margin-bottom:40px;
-            box-shadow:0 10px 30px rgba(0,0,0,.15);
-        }
+    .header::before {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -15%;
+      width: 250px;
+      height: 250px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      pointer-events: none;
+    }
 
-        .header img{
-            width:120px;
-            height:120px;
-            border-radius:25px;
-            background:white;
-            padding:15px;
-            margin-bottom:20px;
-        }
+    .header img {
+      width: 110px;
+      height: 110px;
+      border-radius: 30px;
+      background: white;
+      padding: 18px;
+      box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.2);
+      margin-bottom: 1.2rem;
+      transition: transform 0.25s ease;
+      display: inline-block;
+    }
 
-        .header h1{
-            font-size:42px;
-            margin-bottom:10px;
-        }
+    .header img:hover {
+      transform: scale(1.03) rotate(-2deg);
+    }
 
-        .header p{
-            font-size:18px;
-            opacity:.95;
-        }
+    .header h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .card{
-            background:white;
-            border-radius:18px;
-            padding:40px;
-            box-shadow:0 10px 30px rgba(0,0,0,.08);
-        }
+    .header p {
+      font-size: 1.25rem;
+      font-weight: 400;
+      opacity: 0.92;
+      letter-spacing: 0.3px;
+      background: rgba(255, 255, 255, 0.15);
+      display: inline-block;
+      padding: 0.3rem 2rem;
+      border-radius: 60px;
+      backdrop-filter: blur(4px);
+      margin-top: 0.25rem;
+    }
 
-        section{
-            margin-bottom:45px;
-        }
+    /* ----- main card (elevated) ----- */
+    .card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 36px;
+      padding: 2.8rem 3rem;
+      box-shadow: 0 20px 50px -12px rgba(0, 20, 10, 0.15),
+                  0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+      transition: box-shadow 0.2s;
+    }
 
-        h2{
-            color:#3AAE2A;
-            margin-bottom:15px;
-        }
+    /* ----- sections ----- */
+    section {
+      margin-bottom: 2.8rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
 
-        p{
-            margin-bottom:15px;
-        }
+    section:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
 
-        ul{
-            padding-left:25px;
-        }
+    h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #166b30;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-        li{
-            margin-bottom:12px;
-        }
+    h2::before {
+      content: "◆";
+      font-size: 1.2rem;
+      color: #2b9b4a;
+      opacity: 0.7;
+    }
 
-        .permission{
-            background:#EEF9EA;
-            border-left:5px solid #67CC4C;
-            padding:20px;
-            border-radius:10px;
-            margin-top:15px;
-            margin-bottom:15px;
-        }
+    p {
+      margin-bottom: 0.9rem;
+      color: #1f2a3f;
+      font-weight: 400;
+    }
 
-        .footer{
-            text-align:center;
-            margin-top:40px;
-            color:#666;
-            font-size:14px;
-        }
+    ul {
+      padding-left: 1.5rem;
+      margin: 1rem 0 1.2rem;
+      list-style: none;
+    }
 
-        a{
-            color:#3AAE2A;
-            text-decoration:none;
-        }
+    li {
+      margin-bottom: 0.65rem;
+      padding-left: 1.5rem;
+      position: relative;
+      font-weight: 400;
+      color: #1f2a3f;
+    }
 
-        @media(max-width:768px){
+    li::before {
+      content: "▹";
+      color: #2b9b4a;
+      font-weight: 600;
+      position: absolute;
+      left: 0;
+    }
 
-            .header h1{
-                font-size:30px;
-            }
+    /* permission cards */
+    .permission {
+      background: #edf7ed;
+      border-left: 6px solid #2b9b4a;
+      border-radius: 18px;
+      padding: 1.3rem 1.8rem;
+      margin: 1.5rem 0 0.5rem;
+      box-shadow: 0 4px 12px rgba(30, 120, 50, 0.06);
+      transition: background 0.2s;
+    }
 
-            .card{
-                padding:25px;
-            }
+    .permission:hover {
+      background: #e6f3e6;
+    }
 
-        }
-    </style>
+    .permission strong {
+      display: inline-block;
+      font-size: 1.05rem;
+      color: #115a26;
+      margin-bottom: 0.2rem;
+    }
 
+    .permission p {
+      margin-bottom: 0;
+      color: #1f2a3f;
+    }
+
+    /* inline badge / tag */
+    .badge {
+      background: #2b9b4a10;
+      color: #166b30;
+      font-weight: 500;
+      padding: 0.1rem 0.8rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      border: 1px solid #2b9b4a20;
+    }
+
+    /* links */
+    a {
+      color: #1b7a37;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1.5px dotted rgba(27, 122, 55, 0.25);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    a:hover {
+      color: #0b4f22;
+      border-bottom-color: #0b4f22;
+    }
+
+    /* footer */
+    .footer {
+      text-align: center;
+      margin-top: 2.5rem;
+      color: #4f5b6b;
+      font-size: 0.9rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+      letter-spacing: 0.2px;
+    }
+
+    .footer p {
+      margin-bottom: 0.15rem;
+      color: #4f5b6b;
+    }
+
+    .footer strong {
+      color: #1b6b33;
+      font-weight: 600;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+
+      .header {
+        padding: 2rem 1.5rem 2rem;
+        border-radius: 32px 32px 24px 24px;
+      }
+
+      .header h1 {
+        font-size: 2.4rem;
+      }
+
+      .header p {
+        font-size: 1rem;
+        padding: 0.2rem 1.2rem;
+      }
+
+      .header img {
+        width: 85px;
+        height: 85px;
+        padding: 14px;
+      }
+
+      .card {
+        padding: 1.8rem 1.4rem;
+        border-radius: 28px;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .permission {
+        padding: 1rem 1.2rem;
+      }
+
+      ul {
+        padding-left: 0.2rem;
+      }
+
+      li {
+        padding-left: 1.4rem;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .header h1 {
+        font-size: 1.9rem;
+      }
+      .card {
+        padding: 1.4rem 0.9rem;
+      }
+      .permission {
+        padding: 0.8rem 1rem;
+      }
+    }
+
+    /* smooth scroll & selection */
+    ::selection {
+      background: #2b9b4a40;
+      color: #0d3d1c;
+    }
+
+    /* extra glow for the card */
+    .card {
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 28px 60px -16px rgba(20, 80, 30, 0.18),
+                  0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+    }
+
+    /* small "new" style for lists */
+    .list-highlight {
+      background: #f7fbf7;
+      border-radius: 18px;
+      padding: 0.8rem 1.5rem 0.8rem 1.2rem;
+      margin: 0.8rem 0;
+    }
+  </style>
 </head>
-
 <body>
-
 <div class="container">
 
-    <div class="header">
-
-        
-        <img src="ic_launcher-playstore.png" alt="Lumina">
-
-        <h1>Lumina</h1>
-
-        <p>Privacy Policy</p>
-
-    </div>
-
-    <div class="card">
-
-        <section>
-
-            <h2>1. Information We Collect</h2>
-
-            <p>
-                Welcome to <strong>Lumina - Photo Editing</strong>.
-                Your privacy is important to us.
-                Lumina does not require you to create an account and does not collect personal information such as your name, email address, phone number, or home address.
-            </p>
-
-            <div class="permission">
-                <strong>📷 Camera Permission</strong>
-                <p>
-                    Used only when you choose to capture a photo inside the app.
-                </p>
-            </div>
-
-            <div class="permission">
-                <strong>🖼 Photos & Videos Permission</strong>
-                <p>
-                    Required to select images from your device and save edited photos.
-                </p>
-            </div>
-
-            <div class="permission">
-                <strong>🔔 Notifications (Android 13+)</strong>
-                <p>
-                    Used to provide app notifications when enabled.
-                </p>
-            </div>
-
-        </section>
-
-        <section>
-
-            <h2>2. How We Use Information</h2>
-
-            <ul>
-
-                <li>Edit your photos.</li>
-
-                <li>Apply filters and effects.</li>
-
-                <li>Crop, rotate and resize images.</li>
-
-                <li>Save edited photos.</li>
-
-                <li>Share photos using Android's share feature.</li>
-
-            </ul>
-
-            <p>
-                All editing is performed locally on your device whenever possible.
-            </p>
-
-        </section>
-
-        <section>
-
-            <h2>3. Advertising</h2>
-
-            <p>
-
-                Lumina may display advertisements through
-                <strong>Google AdMob</strong>.
-
-            </p>
-
-            <p>
-
-                Google AdMob may collect limited information such as:
-
-            </p>
-
-            <ul>
-
-                <li>Advertising ID</li>
-
-                <li>Device identifiers</li>
-
-                <li>App interactions</li>
-
-                <li>Approximate location (provided by Google services)</li>
-
-            </ul>
-
-            <p>
-
-                Learn more:
-
-                <br>
-
-                <a href="https://policies.google.com/privacy" target="_blank">
-                    https://policies.google.com/privacy
-                </a>
-
-            </p>
-
-        </section>
-
-        <section>
-
-            <h2>4. Third-Party Services</h2>
-
-            <p>
-
-                Lumina may use trusted third-party services including:
-
-            </p>
-
-            <ul>
-
-                <li>Google Play Services</li>
-
-                <li>Google AdMob</li>
-
-                <li>Google Firebase (if enabled)</li>
-
-            </ul>
-
-        </section>
-
-        <section>
-
-            <h2>5. Buy Me a Coffee</h2>
-
-            <p>
-
-                Lumina includes a Buy Me a Coffee option for users who wish to support development.
-
-            </p>
-
-            <p>
-
-                Payments are securely processed by Buy Me a Coffee.
-
-                Lumina never stores your payment information.
-
-            </p>
-
-        </section>
-
-        <section>
-
-            <h2>6. Data Storage</h2>
-
-            <p>
-
-                Edited photos remain on your device.
-
-                Lumina does not upload your images to our servers.
-
-            </p>
-
-        </section>
-
-        <section>
-
-            <h2>7. Sharing</h2>
-
-            <p>
-
-                Photos are shared only when you explicitly choose to share them.
-
-            </p>
-
-        </section>
-
-        <section>
-
-            <h2>8. Data Security</h2>
-
-            <p>
-
-                Your photos remain under your control.
-
-                We take reasonable measures to protect your data.
-
-            </p>
-
-        </section>
-
-        <section>
-
-            <h2>9. Children's Privacy</h2>
-
-            <p>
-
-                Lumina does not knowingly collect personal information from children under the age of 13.
-
-            </p>
-
-        </section>
-
-        <section>
-
-            <h2>10. Changes to This Policy</h2>
-
-            <p>
-
-                This Privacy Policy may be updated from time to time.
-
-                Any changes will appear on this page.
-
-            </p>
-
-        </section>
-
-        <section>
-
-            <h2>11. Contact Us</h2>
-
-            <p>
-
-                If you have any questions regarding this Privacy Policy, please contact:
-
-            </p>
-
-            <p>
-
-                <strong>Muhammad Bilal</strong>
-
-                <br>
-
-                📧 <a href="mailto:mbilal10388@gmail.com">mbilal10388@gmail.com</a>
-
-            </p>
-
-        </section>
-
-    </div>
-
-    <div class="footer">
-
-        <p><strong>Lumina - Photo Editing</strong></p>
-
-        <p>Last Updated: June 29, 2026</p>
-
-    </div>
-
-</div>
-
+  <!-- header -->
+  <div class="header">
+    <!-- icon (placeholder) -->
+    <img src="ic_launcher-playstore.png" alt="Lumina icon" />
+    <h1>Lumina</h1>
+    <p>✨ Privacy Policy</p>
+  </div>
+
+  <!-- main card -->
+  <div class="card">
+
+    <!-- 1. Information -->
+    <section>
+      <h2>Information We Collect</h2>
+      <p>
+        Welcome to <strong>Lumina – Photo Editing</strong>. Your privacy is at the heart of our design.
+        Lumina does <strong>not</strong> require an account, and we never collect personal data like your name, email, address, or phone number.
+      </p>
+
+      <div class="permission">
+        <strong>📷 Camera</strong>
+        <p>Used only when you actively capture a new photo inside the app. No background access.</p>
+      </div>
+
+      <div class="permission">
+        <strong>🖼 Photos &amp; Videos</strong>
+        <p>Required to choose images from your device and to save your beautiful edits locally.</p>
+      </div>
+
+      <div class="permission">
+        <strong>🔔 Notifications (Android 13+)</strong>
+        <p>Used to deliver helpful app notifications — only if you opt in.</p>
+      </div>
+    </section>
+
+    <!-- 2. How we use -->
+    <section>
+      <h2>How We Use Information</h2>
+      <ul>
+        <li>Edit, crop, rotate, and resize your photos</li>
+        <li>Apply filters, effects, and adjustments</li>
+        <li>Save your edited images directly to your device</li>
+        <li>Share photos via Android’s native share sheet</li>
+      </ul>
+      <p style="margin-top:0.5rem; background: #f2faf2; padding: 0.8rem 1.4rem; border-radius: 40px; display: inline-block; font-size:0.95rem;">
+        ⚡ All processing happens locally — your images never leave your device.
+      </p>
+    </section>
+
+    <!-- 3. Advertising -->
+    <section>
+      <h2>Advertising</h2>
+      <p>
+        Lumina may show ads through <strong>Google AdMob</strong> to keep the app free.
+        AdMob may collect limited data such as:
+      </p>
+      <ul>
+        <li>Advertising ID</li>
+        <li>Device identifiers</li>
+        <li>App interactions &amp; usage</li>
+        <li>Approximate location (via Google services)</li>
+      </ul>
+      <p>
+        Learn more about how Google handles data:<br />
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>
+      </p>
+    </section>
+
+    <!-- 4. Third-party -->
+    <section>
+      <h2>Third‑Party Services</h2>
+      <p>We rely on trusted platforms to provide core functionality:</p>
+      <ul>
+        <li>Google Play Services</li>
+        <li>Google AdMob</li>
+        <li>Google Firebase (if enabled for analytics)</li>
+      </ul>
+    </section>
+
+    <!-- 5. Buy me a coffee -->
+    <section>
+      <h2>Buy Me a Coffee</h2>
+      <p>
+        If you love Lumina, you can support development via <strong>Buy Me a Coffee</strong>.
+        Payments are processed securely by the platform — Lumina never sees or stores your payment details.
+      </p>
+    </section>
+
+    <!-- 6. Data storage -->
+    <section>
+      <h2>Data Storage</h2>
+      <p>
+        All edited photos are stored only on your device. Lumina does not upload, backup, or transfer your images to any external server.
+      </p>
+    </section>
+
+    <!-- 7. Sharing -->
+    <section>
+      <h2>Sharing</h2>
+      <p>
+        Photos are shared only when you explicitly choose the share option. We never initiate sharing automatically.
+      </p>
+    </section>
+
+    <!-- 8. Security -->
+    <section>
+      <h2>Data Security</h2>
+      <p>
+        Your photos remain under your control. We implement reasonable safeguards to protect your data, but no system is 100% secure — we encourage you to keep your device updated.
+      </p>
+    </section>
+
+    <!-- 9. Children -->
+    <section>
+      <h2>Children's Privacy</h2>
+      <p>
+        Lumina does not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such data, please contact us.
+      </p>
+    </section>
+
+    <!-- 10. Changes -->
+    <section>
+      <h2>Changes to This Policy</h2>
+      <p>
+        This Privacy Policy may be updated from time to time. Any changes will be posted on this page with an updated “Last Updated” date.
+      </p>
+    </section>
+
+    <!-- 11. Contact -->
+    <section>
+      <h2>Contact Us</h2>
+      <p>
+        If you have questions, concerns, or feedback about this Privacy Policy, reach out to:
+      </p>
+      <p style="background:#edf7ed; padding:0.8rem 1.8rem; border-radius:60px; display:inline-block;">
+        <strong>Muhammad Bilal</strong><br />
+        📧 <a href="mailto:mbilal10388@gmail.com">mbilal10388@gmail.com</a>
+      </p>
+    </section>
+
+  </div> <!-- /card -->
+
+  <!-- footer -->
+  <div class="footer">
+    <p><strong>Lumina</strong> · Photo Editing</p>
+    <p>Last Updated: June 29, 2026</p>
+  </div>
+
+</div> <!-- /container -->
 </body>
 </html>
